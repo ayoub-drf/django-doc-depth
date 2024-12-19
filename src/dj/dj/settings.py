@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'new_models',
     'new_querysets',
     'new_migrations',
+    'new_managers',
+    'new_transactions',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    'second': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'second.sqlite3',
+    },
 }
 
 # DATABASES =  {
