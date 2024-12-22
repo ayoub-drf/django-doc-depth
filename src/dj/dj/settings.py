@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'new_migrations',
     'new_managers',
     'new_transactions',
+    'new_aggregation',
 ]
 
 MIDDLEWARE = [
