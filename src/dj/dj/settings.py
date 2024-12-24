@@ -48,6 +48,10 @@ INSTALLED_APPS = [
     'new_managers',
     'new_transactions',
     'new_aggregation',
+    'new_mult_databases',
+    'new_custom_lookups',
+    'new_query_expressions',
+    'new_database_functions',
 ]
 
 MIDDLEWARE = [
@@ -89,11 +93,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'second': {
+    'secondary': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'second.sqlite3',
     },
 }
+
+DATABASE_ROUTERS = ['new_mult_databases.routers.MyRouter']
 
 # DATABASES =  {
 #     'default': {
