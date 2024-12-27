@@ -6,7 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     # path('urls/', include('new_URLconfs.urls', namespace="new_URLconfs")),
-    path('', include('new_view_functions.urls')),
+    path('', include('new_view_decorators.urls')),
 
 ] + debug_toolbar_urls()
 

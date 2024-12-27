@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'new_database_functions',
     'new_fixtures',
     'new_URLconfs',
+    'new_shortcut_functions',
+    'new_view_decorators',
 ]
 
 MIDDLEWARE = [
