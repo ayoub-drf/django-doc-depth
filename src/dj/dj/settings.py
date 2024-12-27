@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'new_URLconfs',
     'new_shortcut_functions',
     'new_view_decorators',
+    'Asynchronous_support',
 ]
 
 MIDDLEWARE = [
