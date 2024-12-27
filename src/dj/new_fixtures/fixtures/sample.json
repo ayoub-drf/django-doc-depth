@@ -1,0 +1,16 @@
+[
+    {
+      "model": "new_fixtures.person",
+      "pk": 1,
+      "fields": {
+        "first_name": "John"
+      }
+    },
+    {
+      "model": "new_fixtures.person",
+      "pk": 2,
+      "fields": {
+        "first_name": "Paul"
+      }
+    }
+]
