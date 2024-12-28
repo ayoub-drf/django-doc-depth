@@ -4,6 +4,30 @@ from django.http import (
     JsonResponse,
 )
 
+from django.views.generic import (
+    ListView,
+    DetailView,
+    DeleteView,
+    UpdateView,
+    RedirectView,
+    CreateView,
+    TemplateView,
+    View,
+)
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin,
+    PermissionRequiredMixin,
+    
+)
+
+from django.contrib.auth.views import (
+    LoginView,
+    LogoutView,
+    PasswordChangeView,
+    PasswordResetView,
+    
+)
+
 # Create your views here.
 from asgiref.sync import (
     async_to_sync,
