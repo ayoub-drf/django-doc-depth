@@ -4,7 +4,10 @@ from django.http import (
     JsonResponse,
 )
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a6bb0166cea853b847703192e18a5797aba3d53e
 # Create your views here.
 from asgiref.sync import (
     async_to_sync,
