@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'req_res_obj',
     'file_uploads',
     'class_based_views',
+    'csv_output',
 ]
 
 MIDDLEWARE = [
