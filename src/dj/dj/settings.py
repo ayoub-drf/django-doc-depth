@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'file_uploads',
     'class_based_views',
     'csv_output',
+    'pdf_output',
 ]
 
 MIDDLEWARE = [
