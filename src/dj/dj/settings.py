@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'Asynchronous_support',
     'req_res_obj',
     'file_uploads',
+    'class_based_views',
 ]
 
 MIDDLEWARE = [
@@ -98,6 +99,30 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'dj.wsgi.application'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'class_based_views': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
 
 
 # Database
