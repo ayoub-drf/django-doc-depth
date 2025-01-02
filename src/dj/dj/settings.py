@@ -65,17 +65,28 @@ INSTALLED_APPS = [
     'class_based_views',
     'csv_output',
     'pdf_output',
+    'middleware_1',
 ]
+
 
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.security.SecurityMiddleware', # done
+    'django.contrib.sessions.middleware.SessionMiddleware', # done
+    'django.middleware.common.CommonMiddleware', # done
+    'django.middleware.csrf.CsrfViewMiddleware', # done
+    'django.contrib.auth.middleware.AuthenticationMiddleware', # Done
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # 'middleware_1.middlewares.LoggerViewMiddleWare',
+    # 'middleware_1.middlewares.SimpeMiddleWare',
+    'middleware_1.middlewares.simple_middleware_two',
+
+    # 'django.middleware.locale.LocaleMiddleware', # done
+    # 'django.middleware.gzip.GZipMiddleware' # done
+    # 'django.middleware.cache.CacheMiddleware' # done
+    # 'django.middleware.transaction.TransactionMiddleware' # done
 ]
 
 INTERNAL_IPS = [
@@ -118,6 +129,11 @@ LOGGING = {
             'propagate': True,
         },
         'class_based_views': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'middleware_1': {
             'handlers': ['console'],
             'level': 'INFO',
             'propagate': True,
