@@ -66,11 +66,12 @@ INSTALLED_APPS = [
     'csv_output',
     'pdf_output',
     'middleware_1',
+    'template_filters',
+    'django.contrib.humanize',w
 ]
 
 
 MIDDLEWARE = [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware', # done
     'django.contrib.sessions.middleware.SessionMiddleware', # done
     'django.middleware.common.CommonMiddleware', # done
@@ -78,6 +79,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware', # Done
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 
     # 'middleware_1.middlewares.LoggerViewMiddleWare',
     # 'middleware_1.middlewares.SimpeMiddleWare',
@@ -206,7 +208,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")

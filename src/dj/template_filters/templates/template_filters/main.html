@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load my_tags %}
+{% load humanize %}
+
+{% block content %}
+<div style="text-align: center;" class="!text-center w-full">
+    <h1>Filters</h1>
+
+    <p>
+        {{ 1|apnumber }}
+    </p>
+    <p>
+        {{ 4500|intcomma }}
+    </p>
+    <p>
+        {{ 1000000 |intword }}
+    </p>
+    <p>
+        {{ 1|ordinal }}
+    </p>
+
+
+    <hr>
+    <br>
+    <br>
+
+    <p>Sum: {% add_numbers 1900 10 %}</p> 
+    <p>{% add_upper "james" %}</p> 
+
+    <p>
+        <p>{{ ""|default:"Anonymous" }}</p>
+
+        <p>{{ "Dexter"|length }}</p>
+
+        <p>{{ "Dexter"|lower }}</p>
+
+        <p>{{ "Dexter"|upper }}</p>
+
+        <p>{{ 100|add:100 }}</p>
+
+
+        <p>
+            {% autoescape off %}
+            <p>skipped HTML derived from variables</p>
+        {% endautoescape %}
+        </p>
+
+        <p>
+            {% filter force_escape|upper %}
+            This text will be HTML-escaped, and will appear in all lowercase.
+        {% endfilter %}
+        </p>
+
+        <p>
+            {% firstof "" "var2" "var3" %}
+        </p>
+
+        <p>
+            <ul>
+                {% for fruit in my_list reversed %}
+                    <li>{{ fruit }}</li>
+                {% empty %}
+                    <li>Sorry, no fruits in this list.</li>
+                {% endfor %}
+            </ul>
+        </p>
+
+        <p>
+            {% if 'x' == "x" %}
+                This appears if variable somevar equals the string "x"
+            {% endif %}
+        </p>
+
+        <p>
+            {% now "jS F Y H:i" %}
+        </p>
+
+        {% querystring color="red" size="S" %}
+    </p>
+
+</div>
+{% endblock content %}
