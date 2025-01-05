@@ -67,7 +67,7 @@ INSTALLED_APPS = [
     'pdf_output',
     'middleware_1',
     'template_filters',
-    'django.contrib.humanize',w
+    'django.contrib.humanize',
 ]
 
 
