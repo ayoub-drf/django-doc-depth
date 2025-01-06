@@ -4,10 +4,14 @@
 
 {% block content %}
 <div style="text-align: center;" class="!text-center w-full">
-    <h1 class="text-red-700 text-[43px] ">Filters</h1>
-
     <p>
-        {{ "james"|cut: "0" }}
+        {{ "hello"|initial_letter_filter }}
+    </p>
+    <p>
+        {{ "hello"|addUpper }}
+    </p>
+    <p>
+        {{ "0A0A0A0A"|cut:"0" }}
     </p>
     <p>
         {{ 4500|intcomma }}
@@ -24,8 +28,6 @@
     <br>
     <br>
 
-    <p>Sum: {% add_numbers 1900 10 %}</p> 
-    <p>{% add_upper "james" %}</p> 
 
     <p>
         <p>{{ ""|default:"Anonymous" }}</p>
