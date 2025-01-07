@@ -1,0 +1,17 @@
+{% for field in form %}
+    <div class="fieldWrapper">
+        <span class="input">
+            {{ field.label_tag }}
+            {{ field }}
+        </span>
+        {{ field.errors }}
+    </div>
+{% endfor %}
+<style>
+    label {
+        color: #2186F3;
+    }
+    .errorlist li {
+        color: red;
+    }
+</style>

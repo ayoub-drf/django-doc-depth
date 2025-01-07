@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="fieldWrapper">
+            <label style="color: #2196F3;" for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+            {{ form.name }}
+            <span style="color: red;">{{ form.name.errors }}</span>
+        </div>
+
+        <div class="like-clean">
+            <!--  Non Field Errors -->
+            {{ form.non_field_errors }}
+        </div>
+        <input type="submit" value="submit">
+    </form>
+
+    <hr>
+
+    <form >
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.label_tag }} {{ field }}
+                {{ field.errors }}
+                {% if field.help_text %}
+                    <p class="help" id="{{ field.auto_id }}_helptext">
+                        {{ field.help_text|safe }}
+                    </p>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+</html>
