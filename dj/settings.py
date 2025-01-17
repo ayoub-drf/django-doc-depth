@@ -70,6 +70,8 @@ INSTALLED_APPS = [
     'template_filters',
 
     'new_forms_1',
+    'new_form_api',
+    'new_form_model',
 ]
 
 
