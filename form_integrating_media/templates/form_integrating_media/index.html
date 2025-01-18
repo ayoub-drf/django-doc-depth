@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Form</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1> Integrating media </h1>
+    <form method="post">
+        {{form.media.css}}
+        {{ form }}
+        {{form.media.js}}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
