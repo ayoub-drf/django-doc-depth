@@ -5,8 +5,9 @@ from django.utils.translation import gettext_lazy as _
 from .models import Book, Author
 User = get_user_model()
 
-
-BookFormThree = forms.modelform_factory(Book, fields="__all__", widgets={"name": forms.Textarea()})
+# BookFormThree = forms.modelform_factory(Book, fields="__all__", widgets={"name": forms.Textarea()})
+BookFormThree = forms.modelform_factory(Book, fields="__all__")
+BookFormset = forms.formset_factory(BookFormThree, extra=2, can_delete=True)
 
 class MyCharField(forms.CharField):
     def validate(self, value):
@@ -44,6 +45,8 @@ class BookForm(forms.ModelForm):
         #         "max_length": _("This name is too long."),
         #     },
         # }
+
+
 
 
 class BookFormTwo(forms.Form):
