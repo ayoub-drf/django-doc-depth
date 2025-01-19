@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'new_form_api',
     'new_form_model',
     'form_integrating_media',
+    'new_formsets',
 ]
 
 
