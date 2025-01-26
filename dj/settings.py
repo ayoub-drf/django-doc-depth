@@ -76,6 +76,7 @@ INSTALLED_APPS = [
     'new_formsets',
     'new_form_validation',
     'settings_1',
+    'new_exceptions',
 ]
 
 
