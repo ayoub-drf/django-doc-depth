@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'form_integrating_media',
     'new_formsets',
     'new_form_validation',
+    'settings_1',
 ]
 
 
@@ -197,6 +198,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+ADMINS = [("John", "john@example.com"), ("Mary", "mary@example.com")]
 
 
 # Internationalization
