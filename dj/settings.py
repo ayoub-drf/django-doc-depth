@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     'new_form_validation',
     'settings_1',
     'new_exceptions',
+    'new_custom_commands',
 ]
 
 
