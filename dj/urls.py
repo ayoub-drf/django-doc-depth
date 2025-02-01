@@ -10,7 +10,7 @@ urlpatterns = [
     # /home/dexter/dev/django-doc-depth/src/dj/static/css/styles.css
     
     # path('urls/', include('new_URLconfs.urls', namespace="new_URLconfs")),
-    path('', include('new_custom_commands.urls')),
+    path('', include('new_tests_1.urls')),
 
 ] + debug_toolbar_urls()
 

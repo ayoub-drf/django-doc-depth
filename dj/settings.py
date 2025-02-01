@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     'settings_1',
     'new_exceptions',
     'new_custom_commands',
+    'new_tests_1',
 ]
 
 
@@ -224,6 +225,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 MEDIA_URL = 'media/'

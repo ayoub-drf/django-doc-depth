@@ -1,0 +1,18 @@
+[
+{
+    "model": "new_tests_1.animal",
+    "pk": 1,
+    "fields": {
+        "name": "cat",
+        "sound": "meow"
+    }
+},
+{
+    "model": "new_tests_1.animal",
+    "pk": 2,
+    "fields": {
+        "name": "dog",
+        "sound": "bark"
+    }
+}
+]
