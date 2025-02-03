@@ -30,12 +30,14 @@ DEBUG =True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    # 'docs.djangoproject.dev'
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,8 +81,11 @@ INSTALLED_APPS = [
     'new_exceptions',
     'new_custom_commands',
     'new_tests_1',
+    'new_tests_2',
+    'new_static',
 ]
 
+ASGI_APPLICATION = "dj.asgi.application"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware', # done
@@ -167,10 +172,23 @@ DATABASES = {
     'secondary': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'second.sqlite3',
+        "TEST": {
+            "MIRROR": "default",
+        },
     },
+    # "replica": {
+    #     "ENGINE": "django.db.backends.mysql",
+    #     "NAME": "myproject",
+    #     "HOST": "dbreplica",
+    #     "TEST": {
+    #         "MIRROR": "default",
+    # },
 }
 
-DATABASE_ROUTERS = ['new_mult_databases.routers.MyRouter']
+DATABASE_ROUTERS = [
+    'new_mult_databases.routers.MyRouter',
+    'new_tests_2.routers.MyRouter',
+]
 
 # DATABASES =  {
 #     'default': {

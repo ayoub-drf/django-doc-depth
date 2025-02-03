@@ -1,0 +1,62 @@
+from django.contrib.auth.models import AnonymousUser, User
+from django.test import (
+    RequestFactory, 
+    TestCase,
+    override_settings,
+    TransactionTestCase
+)
+from .views import (
+    index_1,
+    Index2,
+    HomeView
+)
+
+class MultiDatabasesTransactionTestCase(TransactionTestCase): # the test must use  TransactionTestCase
+    pass
+
+
+class HostsTestCase(TestCase):
+
+    @override_settings(ALLOWED_HOSTS=["docs.djangoproject.dev"])
+    def test_empty_get(self):
+        response = self.client.get(
+            "/",
+            headers={"host": "docs.djangoproject.dev:8000"},
+        )
+        self.assertEqual(response.status_code, 200)
+
+class HomeViewTestCase(TestCase):
+    def test_environment_set_in_context(self):
+        request = RequestFactory().get("HomeView/")
+        view = HomeView()
+        view.setup(request)
+
+
+        self.assertEqual(view.template_name, "new_tests_2/home.html")
+        self.assertIn("environment", view.get_context_data())
+
+
+class SimpleTest(TestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+        self.user = User.objects.create_user(
+            username="jacob", email="jacob@…", password="top_secret"
+        )
+
+    def test_index1(self):
+        request = self.factory.get("index1/")
+        request.user = self.user
+
+        # Or you can simulate an anonymous user by setting request.user to
+        # an AnonymousUser instance.
+        # request.user = AnonymousUser()
+
+        # response = index_1(request)
+
+
+        # Use this syntax for class-based views.
+        response = Index2.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("Index", response.content.decode())
+

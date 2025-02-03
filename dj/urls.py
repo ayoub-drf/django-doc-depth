@@ -4,19 +4,24 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 
 from django.conf import settings
 from django.views.static import serve
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # /home/dexter/dev/django-doc-depth/src/dj/static/css/styles.css
     
     # path('urls/', include('new_URLconfs.urls', namespace="new_URLconfs")),
-    path('', include('new_tests_1.urls')),
+    path('', include('new_static.urls')),
 
-] + debug_toolbar_urls()
+] 
+
+
 
 # Serving files in development
 if settings.DEBUG:
+    urlpatterns += debug_toolbar_urls()
     urlpatterns += [
         re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
-    ]
+    ] 
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
