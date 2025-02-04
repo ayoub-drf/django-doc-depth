@@ -1,3 +1,14 @@
+from django.views.decorators.debug import sensitive_variables
+# prevent the values of those variables from being included in error report
+@sensitive_variables("user", "pw", "cc") # Must be the first decorator
+def process_info(user):
+    pw = user.pass_word
+    cc = user.credit_card_number
+    name = user.name
+
+# For post http req
+from django.views.decorators.debug import sensitive_post_parameters
+
 from django.shortcuts import HttpResponse
 from django.contrib.auth.decorators import (
     login_required,

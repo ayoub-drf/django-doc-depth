@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l*323nfa=h7yd^n1#=zpkjxbr3&4mpc$qe1hn65^&#z8rjdyh!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True
+DEBUG =False
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
@@ -88,6 +88,9 @@ INSTALLED_APPS = [
 ASGI_APPLICATION = "dj.asgi.application"
 
 MIDDLEWARE = [
+    'django.middleware.common.BrokenLinkEmailsMiddleware', # 404 errors for email errors about broken links to MANAGERS
+
+
     'django.middleware.security.SecurityMiddleware', # done
     'django.contrib.sessions.middleware.SessionMiddleware', # done
     'django.middleware.common.CommonMiddleware', # done
@@ -105,6 +108,8 @@ MIDDLEWARE = [
     # 'django.middleware.gzip.GZipMiddleware' # done
     # 'django.middleware.cache.CacheMiddleware' # done
     # 'django.middleware.transaction.TransactionMiddleware' # done
+
+
 ]
 
 INTERNAL_IPS = [
@@ -221,6 +226,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 ADMINS = [("John", "john@example.com"), ("Mary", "mary@example.com")]
+MANAGERS = [("John", "john@example.com"), ("Mary", "mary@example.com")]
 
 
 # Internationalization
@@ -256,3 +262,22 @@ MAX_UPLOAD_SIZE = 10485760
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SERVER_EMAIL = "dexter@aol.it"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+import re
+IGNORABLE_404_URLS = [
+    re.compile(r"\.(php|cgi)$"),
+    re.compile(r"^/phpmyadmin/"),
+]
+
+# DEFAULT_EXCEPTION_REPORTER_FILTER = "path.to.your.CustomExceptionReporterFilter"
+
+# EMAIL_BACKEND = config('EMAIL_BACKEND', cast=str)
+# EMAIL_HOST = config('EMAIL_HOST', cast=str)
+# EMAIL_PORT = config('EMAIL_PORT', cast=int)
+# EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER', cast=str)
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', cast=str)
