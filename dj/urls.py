@@ -11,7 +11,7 @@ urlpatterns = [
     # /home/dexter/dev/django-doc-depth/src/dj/static/css/styles.css
     
     # path('urls/', include('new_URLconfs.urls', namespace="new_URLconfs")),
-    path('', include('new_static.urls')),
+    path('', include('admin_site.urls')),
 
 ] 
 
