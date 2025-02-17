@@ -90,6 +90,7 @@ INSTALLED_APPS = [
     'new_tests_2',
     'new_static',
     'admin_site',
+    'admin_actions',
 ]
 
 ASGI_APPLICATION = "dj.asgi.application"
