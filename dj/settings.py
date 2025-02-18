@@ -91,6 +91,7 @@ INSTALLED_APPS = [
     'new_static',
     'admin_site',
     'admin_actions',
+    'cryptographic_signing',
 ]
 
 ASGI_APPLICATION = "dj.asgi.application"
