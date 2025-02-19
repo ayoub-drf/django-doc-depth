@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-18 17:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: admin_actions/admin.py:26
+#, python-format
+msgid "%d story was successfully marked as published."
+msgid_plural "%d stories were successfully marked as published."
+msgstr[0] ""
+msgstr[1] ""
+
+#: new_form_model/models.py:13
+msgid "Author"
+msgstr ""
+
+#: new_form_model/models.py:14
+msgid "Authors"
+msgstr ""
+
+#: new_form_model/models.py:25
+msgid "User"
+msgstr ""
+
+#: new_form_model/models.py:29 new_tests_2/models.py:8
+msgid "Book"
+msgstr ""
+
+#: new_form_model/models.py:30 new_tests_2/models.py:9
+msgid "Books"
+msgstr ""
+
+#: new_form_validation/forms.py:75
+#, python-format
+msgid "Passwords do not match. (%(password)s)"
+msgstr ""
+
+#: new_internationalization/templates/new_internationalization/home.html:7
+msgid "My Multilingual Site"
+msgstr ""
+
+#: new_internationalization/templates/new_internationalization/home.html:12
+msgid "Today is"
+msgstr ""
+
+#: new_internationalization/views.py:9
+msgid "Welcome to our website!"
+msgstr "Bienvenue sur notre site Web !"
+
+#: new_managers/models.py:11
+msgid "Comedy"
+msgstr ""
+
+#: new_managers/models.py:12
+msgid "Fantasy"
+msgstr ""
+
+#: new_tests_1/models.py:9
+msgid "Animal"
+msgstr ""
+
+#: new_tests_1/models.py:10
+msgid "Animals"
+msgstr ""
+
+#: new_tests_2/models.py:5
+msgid "name"
+msgstr ""
+
+#: new_transactions/models.py:9
+msgid "Product"
+msgstr ""
