@@ -93,6 +93,7 @@ INSTALLED_APPS = [
     'admin_actions',
     'cryptographic_signing',
     'new_internationalization',
+    'new_Localization',
 ]
 
 ASGI_APPLICATION = "dj.asgi.application"
@@ -118,6 +119,8 @@ MIDDLEWARE = [
     # 'django.middleware.gzip.GZipMiddleware' # done
     # 'django.middleware.cache.CacheMiddleware' # done
     # 'django.middleware.transaction.TransactionMiddleware' # done
+    
+    'new_Localization.middleware.TimezoneMiddleware',
 
 
 ]
@@ -245,9 +248,9 @@ MANAGERS = [("John", "john@example.com"), ("Mary", "mary@example.com")]
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+USE_TZ = True
 
 USE_I18N = True
-
 USE_L10N = True
 
 LANGUAGES = [
@@ -258,7 +261,6 @@ LANGUAGES = [
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

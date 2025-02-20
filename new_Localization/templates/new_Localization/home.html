@@ -1,0 +1,26 @@
+{% load tz %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Time Demo</title>
+  </head>
+  <body>
+    <h1>Current Time Demo</h1>
+    <p>The current time is: <strong>{{ current_time }}</strong></p>
+
+    {% timezone "Europe/Paris" %}
+    <p>Paris time: {{ current_time }}</p>
+    {% endtimezone %} {% timezone None %}
+    <p>Server time: {{ current_time }}</p>
+    {% endtimezone %}
+
+    <p>
+      {{ current_time|localtime }}
+      <br>
+      {{ current_time|utc }}
+      <br>
+      {{ current_time|timezone:'Indian/Mahe' }}
+    </p>
+  </body>
+</html>
